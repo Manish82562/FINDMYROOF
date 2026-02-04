@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<link rel="stylesheet" href="login_style.css">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Account — FindMyRoof</title>
+  <link rel="icon" href="images/home.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="registerbody">
+  <nav class="navbar navbar-expand-lg py-3" style="background-color: white;">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/home.png" alt="" width="40" class="me-2 custom-animate">
+        <span class="fw-bold fs-4 custom-animate" style="color: orange;">FindMyRoof</span>
+      </a>
+      <button class="navbar-toggler custom-animate" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item mx-2">
+            <a class="nav-link fw-medium custom-animate" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link fw-medium custom-animate" href="#">Explore</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link fw-medium custom-animate" href="#">Post a Room</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="#" class="btn btn-danger px-4 custom-animate">Find a Room</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="login.html" class="btn btn-outline-dark px-4 custom-animate">Login</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a href="register.html" class="btn btn-dark px-4 custom-animate">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9 col-lg-7">
+        <div class="card card-register p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="d-flex align-items-center">
+              <img src="images/home.png" alt="logo" width="36" class="me-2" />
+              <div>
+                <div class="brand">FindMyRoof</div>
+                <small class="text-muted">Create an account to get started</small>
+              </div>
+            </div>
+            <a href="login.html" class="btn btn-sm btn-outline-secondary">Sign in</a>
+          </div>
+
+          <form id="registerForm" novalidate>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="fullname" class="form-label">Full name</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Jane Doe" required>
+                <div class="invalid-feedback">Please enter your full name.</div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="username" name="username" placeholder="your-username" required aria-describedby="usernameHelp">
+                  <button class="btn btn-outline-secondary" type="button" id="checkUsername">Check</button>
+                </div>
+                <div id="usernameHelp" class="form-text username-status">Choose a unique username.</div>
+                <div class="invalid-feedback">Username is required.</div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="emailR" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailR" name="email" placeholder="you@example.com" required>
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+1 555 555 5555">
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="passwordR" class="form-label">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="passwordR" name="password" minlength="6" required aria-describedby="pwHelp">
+                  <button class="btn btn-outline-secondary" type="button" id="togglePwR">Show</button>
+                </div>
+                <div class="mt-2 strength-bar" aria-hidden="true"><div class="strength-fill" id="strengthFill"></div></div>
+                <div id="pwHelp" class="form-text valid-indicator">Use 8+ characters with a mix of letters and numbers.</div>
+                <div class="invalid-feedback">Please provide a password (min 6 characters).</div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="confirmPw" class="form-label">Confirm password</label>
+                <input type="password" class="form-control" id="confirmPw" name="confirmPw" required>
+                <div id="matchHelp" class="form-text valid-indicator">Passwords must match.</div>
+                <div class="invalid-feedback">Passwords do not match.</div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" required>
+                  <label class="form-check-label" for="terms">I agree to the <a href="#">Terms &amp; Privacy</a></label>
+                  <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+              </div>
+
+              <div class="col-12 d-grid">
+                <button class="btn btn-danger btn-lg" id="submitBtn" type="submit"  >Create account</button>
+              </div>
+
+              <div class="col-12 text-center text-muted mt-2">
+                Already have an account? <a href="login.html">Sign in</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script>
+    (function(){
+      const form = document.getElementById('registerForm');
+      const pw = document.getElementById('passwordR');
+      const confirm = document.getElementById('confirmPw');
+      const strengthFill = document.getElementById('strengthFill');
+      const submitBtn = document.getElementById('submitBtn');
+      const terms = document.getElementById('terms');
+      const username = document.getElementById('username');
+      const usernameHelp = document.getElementById('usernameHelp');
+      const checkBtn = document.getElementById('checkUsername');
+
+      // Mock username database (for demo)
+      const taken = ['admin','user','test','owner'];
+
+      function checkUsernameAvailability(name){
+        return new Promise((resolve) => {
+          // simulate network delay
+          setTimeout(() => resolve(!taken.includes(name.toLowerCase())), 700);
+        });
+      }
+
+      checkBtn.addEventListener('click', async function(){
+        const name = username.value.trim();
+        if (!name){ usernameHelp.textContent = 'Enter a username first.'; return; }
+        usernameHelp.textContent = 'Checking…';
+        const ok = await checkUsernameAvailability(name);
+        usernameHelp.textContent = ok ? 'Username is available ✓' : 'That username is taken ✕';
+      });
+
+      username.addEventListener('blur', async function(){
+        const name = username.value.trim();
+        if (!name) { usernameHelp.textContent = 'Choose a unique username.'; return; }
+        usernameHelp.textContent = 'Checking…';
+        const ok = await checkUsernameAvailability(name);
+        usernameHelp.textContent = ok ? 'Username is available ✓' : 'That username is taken ✕';
+      });
+
+      // Password strength (very simple heuristic)
+      function pwStrength(value){
+        let score = 0;
+        if (value.length >= 8) score += 2;
+        if (/[A-Z]/.test(value)) score += 1;
+        if (/[0-9]/.test(value)) score += 1;
+        if (/[^A-Za-z0-9]/.test(value)) score += 1;
+        return Math.min(4, score);
+      }
+
+      pw.addEventListener('input', function(){
+        const s = pwStrength(pw.value);
+        const percent = (s / 4) * 100;
+        strengthFill.style.width = percent + '%';
+        if (s <= 1) strengthFill.style.background = '#ff6b6b';
+        else if (s === 2) strengthFill.style.background = '#ffb74d';
+        else if (s === 3) strengthFill.style.background = '#9ad36b';
+        else strengthFill.style.background = 'linear-gradient(90deg,#ff7a18,#ffb199)';
+      });
+
+      // Toggle show/hide password
+      document.getElementById('togglePwR').addEventListener('click', function(){
+        const t = pw.type === 'password' ? 'text' : 'password';
+        pw.type = t; this.textContent = t === 'password' ? 'Show' : 'Hide';
+      });
+
+      // Confirm password match
+      function validateMatch(){
+        if (!confirm.value) return false;
+        return pw.value === confirm.value;
+      }
+
+      confirm.addEventListener('input', function(){
+        const ok = validateMatch();
+        const matchHelp = document.getElementById('matchHelp');
+        matchHelp.textContent = ok ? 'Passwords match ✓' : 'Passwords must match.';
+      });
+
+      // Enable submit only when terms checked and basic validation passes
+      function updateSubmitState(){
+        submitBtn.disabled = !terms.checked;
+      }
+      terms.addEventListener('change', updateSubmitState);
+      updateSubmitState();
+
+      // Form submit handler with validation
+      form.addEventListener('submit', function(e){
+        if (!form.checkValidity() || !validateMatch()){
+          e.preventDefault(); e.stopPropagation();
+          if (!validateMatch()){
+            confirm.classList.add('is-invalid');
+          } else {
+            confirm.classList.remove('is-invalid');
+          }
+        } else {
+          e.preventDefault();
+          // For demo: show a success message
+          submitBtn.textContent = 'Creating account...';
+          submitBtn.disabled = true;
+          setTimeout(() => {
+            alert('Account created (demo). Redirecting to sign-in.');
+            window.location.href = 'login.html';
+          }, 900);
+        }
+        form.classList.add('was-validated');
+      });
+    })();
+  </script>
+</script>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 mb-3 mb-md-0">
+            <a class="d-flex align-items-center" href="index.html"><img src="images/home.png" alt="logo" width="36" class="me-2" /><span class="brand">FindMyRoof</span></a>
+            <p class="small text-muted mt-2">FindMyRoof helps you find rooms, houses and apartments with trusted listings and easy contact tools.</p>
+          </div>
+
+          <div class="col-6 col-md-3 footer-links">
+            <h6 class="mb-2">Company</h6>
+            <ul class="list-unstyled small mb-0">
+              <li><a href="terms.html">Terms & Privacy</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-3 footer-links">
+            <h6 class="mb-2">Account</h6>
+            <ul class="list-unstyled small mb-0">
+              <li><a href="login.html">Sign in</a></li>
+              <li><a href="register.html">Create account</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-2 text-md-end mt-3 mt-md-0">
+            <h6 class="mb-2">Contact</h6>
+            <div class="small">privacy@findmyroof.example</div>
+            <div class="social-icons mt-2">
+              <a href="#" aria-label="facebook"><img src="images/home.png" alt="fb" /></a>
+              <a href="#" aria-label="twitter"><img src="images/home.png" alt="tw" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright text-center">&copy; 2025 FindMyRoof — All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
